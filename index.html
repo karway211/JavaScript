@@ -82,6 +82,44 @@
     console.log('B' > 'a'); // false
     console.log('1' > '11'); // false
 
+    const num = 10;
+    console.log(num.toString(2)); // 1010
+    console.log(num.toString(8)); // 12
+    console.log(num.toString(16)); // a
+    const obj = {
+      toString() {
+        return 'JavaScript';
+      }
+    };
+    console.log(`Hello ${obj}`);
+
+    console.log(parseInt('')) // NaN
+    console.log(parseInt('10.6')); // 10
+    console.log(parseInt('1abc234')); // 1
+    console.log(parseInt('12abc34')); // 12
+    console.log(parseInt('123abc4')); // 123
+    console.log(parseInt('abc1234')); // NaN
+    console.log(parseInt('111', 2)); // 7
+    console.log(parseInt('24', 2)); // NaN - Binary number can only contain 0 and 1
+
+    console.log(typeof "JavaScript") // 'string'
+    console.log(typeof 1) // 'number'
+    console.log(typeof NaN) // 'number'
+    console.log(typeof false) // 'boolean'
+    console.log(typeof [1, 2, 3, 4]) // 'object'
+    console.log(typeof { name: 'Andrey', age: 37 }) // 'object'
+    console.log(typeof new Date()) // 'object'
+    console.log(typeof function () { }) // 'function'
+    console.log(typeof lalala) // 'undefined'
+    console.log(typeof null) // 'object'
+
+    console.log(isNaN(123)) // false
+    console.log(isNaN('123')) // false
+    console.log(isNaN('JavaScript')) // true
+    console.log(isNaN('10px')) // true
+    console.log(isNaN('1e10000')) // false
+    console.log(isNaN('')) // false
+
   </script>
 
 </body>
