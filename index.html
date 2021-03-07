@@ -9,6 +9,134 @@
 
 <body>
 
+  <h1>Type coercion in JavaScript</h1>
+
+  <script>
+    // String conversion:
+    // explicit:
+    String(1); // '1'
+    String(null) // 'null'
+    String(undefined) // 'undefined'
+    String(true) // 'true'
+    String(false) // 'false'
+    // implicit:
+    console.log(1 + ''); // '1'
+    console.log(null + ''); // 'null'
+    console.log(undefined + ''); // 'undefined'
+    console.log(true + ''); // 'true'
+    console.log(false + ''); // 'false'
+    console.log(1 + []); // '1'
+
+    // Numeric conversion:
+    // explicit:
+    Number(null) // 0
+    Number(undefined) // NaN
+    Number(true) // 1
+    Number(false) // 0
+    Number(' 1 ') // 1
+    Number('-1') // -1
+    Number(' 1s ') // NaN
+    Number(1) // 1
+    // implicit:
+    console.log(+null); // 0
+    console.log(+undefined); // NaN
+    console.log(+true); // 1
+    console.log(+false); // 0
+    console.log(+' 1 '); // 1
+    console.log(+'-1'); // -1
+    console.log(+' 1s '); // NaN
+    console.log(+1); // 1
+
+    null == 0 // false
+    null == null // true
+    undefined == undefined // true
+    null == undefined // true
+
+    String(['1', '2', '3']); // '1,2,3' преобразуется в строковое значение содержимого массива
+
+    const a = 10 - '5'; // 5
+    const b = 10 * '5'; // 50
+    const c = 10 / '5'; // 2
+    const d = 10 % '5'; // 0
+
+    console.log(d);
+
+    console.log(true + 1); // 2
+    console.log(false + 1) // 1
+    console.log({} + ''); // 0
+
+    console.log(undefined === null); // false
+    console.log(undefined == null); // true
+    console.log(undefined == 0); // false
+    console.log(null == 0); // false
+    console.log(undefined >= 0); // false undefined => NaN
+    console.log(null >= 0); // true null => 0
+    console.log(1 === '1'); // false
+    console.log(1 == ' 1 '); // true
+    console.log(1 == [1]); // true
+    console.log(0 == []); // true
+    console.log([] == []); // false разные ссылки
+    console.log(1 == true); // true
+    console.log(true > []); // true  true => 1, [] => 0
+    console.log('b' > 'a'); // true
+    console.log('B' > 'a'); // false
+    console.log('1' > '11'); // false
+    console.log(true | 0); // 1
+    console.log(1 / null); // Infinity
+
+
+    const num = 10;
+    console.log(num.toString(2)); // 1010
+    console.log(num.toString(8)); // 12
+    console.log(num.toString(16)); // a
+    const obj = {
+      toString() {
+        return 'JavaScript';
+      }
+    };
+    console.log(`Hello ${obj}`);
+
+    console.log(parseInt('')) // NaN
+    console.log(parseInt('10.6')); // 10
+    console.log(parseInt('1abc234')); // 1
+    console.log(parseInt('12abc34')); // 12
+    console.log(parseInt('123abc4')); // 123
+    console.log(parseInt('abc1234')); // NaN
+    console.log(parseInt('111', 2)); // 7
+    console.log(parseInt('24', 2)); // NaN - Binary number can only contain 0 and 1
+
+    console.log(isNaN(123)) // false
+    console.log(isNaN('123')) // false
+    console.log(isNaN('JavaScript')) // true
+    console.log(isNaN('10px')) // true
+    console.log(isNaN('1e10000')) // false
+    console.log(isNaN('')) // false
+
+    //Boolean output false:
+    Boolean('');
+    Boolean(0);
+    Boolean(-0);
+    Boolean(NaN);
+    Boolean(null);
+    Boolean(undefined);
+    Boolean(false);
+    // остальные значения Boolean(n) (включая ' ') => true
+
+    Boolean([]) // true
+    Boolean(String([])) // false
+
+    // !!n неявное преобразование к булевому значению
+    !!'';
+    !!0;
+    !!-0;
+    !!NaN;
+    !!null;
+    !!undefined;
+    !!false;
+    // остальные значения !!n (включая ' ') => true
+
+  </script>
+
 </body>
 
 </html>
