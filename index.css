@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fruit input {
+  display: none;
+}
+
+table {
+  width: 300px;
+}
+
+table, th, td {
+  border: 1px solid #000000;
+}
