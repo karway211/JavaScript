@@ -1,0 +1,51 @@
+.main {
+  display: flex;
+}
+
+.half {
+  width: 100%;
+}
+.base-list, .symbol-list {
+  list-style-type: none;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.symbol-control__list {
+  display: none;
+  width: 100px;
+  position: absolute;
+  background-color: lavender;
+  list-style-type: none;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.show {
+  display: block;
+}
+
+.error {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+}
+
+.error-content {
+  display: inline-block;
+  position: relative;
+  background-color: #fff;
+  padding: 30px;
+}
+.error-bth {
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  right: 2px;
+}
