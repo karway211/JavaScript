@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100vh;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+}
+
+input[type=text] {
+  padding: 10px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.bth {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.user {
+  margin-bottom: 100px;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
+}
